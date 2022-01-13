@@ -16,7 +16,6 @@ class ArticleListViewModel: ViewModel() {
     fun fetch(country: String, category: String) {
         repository.fetchArticles(country, category)
             .subscribe { data ->
-                println(data.articles)
                 _articles.postValue(data.articles)
             }
     }

@@ -8,7 +8,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class ArticleListRepository {
-    val key = ""
+    val key = "30d06e4f9a934402a204fa89f9d9acfc"
     fun fetchArticles(country: String, category: String): Single<NewsData> {
         return retrofit.create(HeadlinesApiRequest::class.java).fetch(country, category, key)
             .subscribeOn(Schedulers.io())

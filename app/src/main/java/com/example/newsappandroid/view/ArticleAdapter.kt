@@ -29,6 +29,7 @@ class ArticleAdapter(
 
     fun update(data: List<Article>) {
         articles = data
+        notifyDataSetChanged()
     }
 
     class ArticleViewHolder(view: View): RecyclerView.ViewHolder(view) {
