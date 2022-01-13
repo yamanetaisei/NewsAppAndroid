@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsappandroid.R
 import com.example.newsappandroid.model.Article
+import com.example.newsappandroid.model.NewsData
 
 class ArticleAdapter(
     private var articles: List<Article>
