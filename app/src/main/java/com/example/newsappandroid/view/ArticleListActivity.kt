@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsappandroid.R
 import com.example.newsappandroid.model.Article
-import com.example.newsappandroid.model.MockArticle
 import com.example.newsappandroid.viewmodel.ArticleListViewModel
 import androidx.lifecycle.Observer
 
