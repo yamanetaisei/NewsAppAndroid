@@ -20,6 +20,7 @@ class ArticleListActivity : AppCompatActivity() {
     private val viewModel by viewModels<ArticleListViewModel>()
     private lateinit var adapter: ArticleAdapter
     private lateinit var  recyclerView: RecyclerView
+    private var language = "jp"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +62,7 @@ class ArticleListActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.fetch("jp", "general")
+        viewModel.fetch(language, "general")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -76,10 +77,12 @@ class ArticleListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.jp -> {
-                viewModel.fetch("jp", "general")
+                language = "jp"
+                viewModel.fetch(language, "general")
             }
             R.id.us -> {
-                viewModel.fetch("us", "general")
+                language = "us"
+                viewModel.fetch(language, "general")
             }
             else -> return super.onOptionsItemSelected(item)
         }
