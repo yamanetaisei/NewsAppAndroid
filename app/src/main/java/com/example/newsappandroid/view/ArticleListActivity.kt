@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -60,5 +62,28 @@ class ArticleListActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         viewModel.fetch("jp", "general")
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+
+        val inflater = menuInflater
+        inflater.inflate(R.menu.language_menu, menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.jp -> {
+                viewModel.fetch("jp", "general")
+                return true
+            }
+            R.id.us -> {
+                viewModel.fetch("us", "general")
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 }
