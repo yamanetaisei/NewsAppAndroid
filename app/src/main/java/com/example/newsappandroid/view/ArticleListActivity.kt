@@ -34,6 +34,7 @@ class ArticleListActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         val itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         recyclerView.addItemDecoration(itemDecoration)
+        recyclerView.background = getDrawable(R.color.cell_gray)
         adapter = ArticleAdapter(viewModel.articles.value ?: emptyList())
         rowClick()
         recyclerView.layoutManager = LinearLayoutManager(this)
