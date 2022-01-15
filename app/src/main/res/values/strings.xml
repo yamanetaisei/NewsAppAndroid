@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewsAppAndroid</string>
+    <string name="jp">JP</string>
+    <string name="us">US</string>
 </resources>
