@@ -22,7 +22,6 @@ object ApiClient {
         .build()
 
     private val gson = GsonBuilder()
-        .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .create()
 
     var retrofit = Retrofit.Builder()

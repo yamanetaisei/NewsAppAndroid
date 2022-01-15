@@ -9,6 +9,7 @@ import com.example.newsappandroid.R
 import com.example.newsappandroid.model.Article
 import com.example.newsappandroid.viewmodel.ArticleListViewModel
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 
 class ArticleListActivity : AppCompatActivity() {
 
@@ -26,6 +27,8 @@ class ArticleListActivity : AppCompatActivity() {
 
     private fun setupUI() {
         recyclerView = findViewById(R.id.recyclerView)
+        val itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        recyclerView.addItemDecoration(itemDecoration)
         adapter = ArticleAdapter(viewModel.articles.value ?: emptyList())
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
