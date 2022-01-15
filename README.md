@@ -18,6 +18,7 @@ MVVM
 
 ``` kotlin
 data class Key(
-    val newsApi: String = "30d06e4f9a934402a204fa89f9d9acfc"
+    val newsApi: String = "YOUR_API_KEY"
 )
 ```
+`"YOUR_API_KEY"`に自分で発行したKeyを貼り付ける
