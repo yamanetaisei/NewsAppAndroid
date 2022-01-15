@@ -14,6 +14,16 @@ class ArticleAdapter(
     private var articles: List<Article>
 ): RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 
+    private lateinit var listener: OnArticleRowClickListener
+
+    interface OnArticleRowClickListener {
+        fun onClick(article: Article)
+    }
+
+    fun setOnArticleRowClickListener(listener: OnArticleRowClickListener) {
+        this.listener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.row_article, parent, false)
@@ -22,6 +32,9 @@ class ArticleAdapter(
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         holder.bind(articles[position])
+        holder.itemView.setOnClickListener {
+            listener.onClick(articles[position])
+        }
     }
 
     override fun getItemCount(): Int {
