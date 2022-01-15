@@ -77,13 +77,12 @@ class ArticleListActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.jp -> {
                 viewModel.fetch("jp", "general")
-                return true
             }
             R.id.us -> {
                 viewModel.fetch("us", "general")
-                return true
             }
             else -> return super.onOptionsItemSelected(item)
         }
+        return true
     }
 }
