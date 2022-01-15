@@ -10,3 +10,14 @@
 
 ## アーキテクチャ
 MVVM
+
+## セットアップ
+[NEWSAPI公式サイト](https://newsapi.org)からAPIKeyを発行
+
+`app/src/main/java/com/example/newsappandroid/data`に以下のデータクラスを追加
+
+``` kotlin
+data class Key(
+    val newsApi: String = "30d06e4f9a934402a204fa89f9d9acfc"
+)
+```
