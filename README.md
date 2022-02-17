@@ -11,6 +11,9 @@
 ## アーキテクチャ
 MVVM
 
+<img src="https://user-images.githubusercontent.com/50735539/154416550-b4d5903f-983d-4147-a02d-1a8257ca832b.png" width="700">
+
+
 ## セットアップ
 [NEWSAPI公式サイト](https://newsapi.org)からAPIKeyを発行
 
